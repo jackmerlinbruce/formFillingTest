@@ -8,48 +8,31 @@
     <style>
         body {
             text-align: center;
-            width: 50%;
+            width: 100%;
         }
         h1 {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 5vw;
         }
-        .container {
-            
+        .item {
+            margin: 10px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div>
-            <input id="numApples" type="number" placeholder="How many apples?">
-            <input id="priceApples" type="number" placeholder="Price of one?">
-        </div>
-        <div>
-            <button id="submit">submit</button>
-        </div>
-        <div>
-            <h1 id="apples"></h1>
-        </div>
-    </div>
+    <form>
+        <input class="item" type="number" name="apples" placeholder="How many apples?" required>
+        <br>
+        <input class="item" type="number" name="oranges" placeholder="How many oranges?" required>
+        <br>
+        <input class="item" type="number" name="bananas" placeholder="How many bananas?" required>
+        <br>
+        <input class="item" type="submit" value="Submit">
+    </form>
 
-    <script>
-        const inputApples = document.getElementById('numApples')
-        const inputPrice = document.getElementById('priceApples')
 
-        const submit = document.getElementById('submit')
 
-        const apples = document.getElementById('apples')
-
-        submit.addEventListener('click', event => {
-            let numApples = inputApples.value
-            let pricePerApple = inputPrice.value
-            let totalPrice = (numApples * pricePerApple).toFixed(2);
-            let displayText = `In Barbados, ${numApples} apples would cost $${totalPrice}`
-            apples.innerHTML = displayText
-        })
-
-    </script>
     <script src="./main.js"></script>
 </body>
 </html>
